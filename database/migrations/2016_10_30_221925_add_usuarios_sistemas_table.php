@@ -14,8 +14,8 @@ class AddUsuariosSistemasTable extends Migration
     public function up()
     {
         Schema::create('Usuarios_Sistema', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->foreign('Profesionistas_id');
+            $table->enum('Tipo_Usuario',['Administrador','Medicamento','Psicologo','Tutor']);
         });
     }
 

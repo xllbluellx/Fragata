@@ -18,10 +18,10 @@ class AddInventarioMedicotable extends Migration
             $table->string('Nombre');
             $table->string('Codigo');
             $table->string('Laboratorio');
-            $table->string('Presentacion_Producto_id');
+            $table->foreign('Presentacion_Producto_id');
             $table->enum('Controlado',['Si','No']);
             $table->date('Fecha_Ingreso_Medicamento');
-            $table->float('Cantidad');  
+            $table->float('Cantidad');
             $table->timestamps();
         });
     }

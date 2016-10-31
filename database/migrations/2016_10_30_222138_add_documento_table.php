@@ -15,7 +15,12 @@ class AddDocumentoTable extends Migration
     {
         Schema::create('Documento', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->enum('Tipo_de_documento',['Legal','Administrativo','Medico','Psicologo','Consejeria']);
+            $table->foreign('Usuarios_id');
+            $table->string('Ruta_archivo');
+            $table->date('Periodicidad');
+            $table->date('Vigencia');
+
         });
     }
 

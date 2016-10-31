@@ -15,7 +15,14 @@ class AddTratamientoTable extends Migration
     {
         Schema::create('Tratamiento', function (Blueprint $table) {
             $table->increments('id');
+            $table->foreign('Usuarios_id');
+            $table->foreign('Profesionistas_id');
+            $table->date('Fecha_Expedicion');
+            $table->enum('status',['Activo','Inactivo'])->default('Activo');
+            $table->date('Fecha_Fin_Tratamiento');
+            $table->string('Indicaciones');
             $table->timestamps();
+
         });
     }
 

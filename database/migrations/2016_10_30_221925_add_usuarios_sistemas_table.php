@@ -14,7 +14,7 @@ class AddUsuariosSistemasTable extends Migration
     public function up()
     {
         Schema::create('Usuarios_Sistema', function (Blueprint $table) {
-            $table->foreign('Profesionistas_id');
+            $table->foreign('Profesionistas_id')->references('id')->on('Profesionistas')->onDelete('cascade')->onUpdate('cascade');;
             $table->enum('Tipo_Usuario',['Administrador','Medicamento','Psicologo','Tutor']);
         });
     }

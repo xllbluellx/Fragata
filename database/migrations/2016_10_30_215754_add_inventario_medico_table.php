@@ -18,7 +18,7 @@ class AddInventarioMedicotable extends Migration
             $table->string('Nombre');
             $table->string('Codigo');
             $table->string('Laboratorio');
-            $table->foreign('Presentacion_Producto_id');
+            $table->foreign('Presentacion_Producto_id')->references('id')->on('Presentacion_Producto')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('Controlado',['Si','No']);
             $table->date('Fecha_Ingreso_Medicamento');
             $table->float('Cantidad');

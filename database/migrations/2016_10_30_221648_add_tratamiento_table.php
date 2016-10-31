@@ -15,8 +15,8 @@ class AddTratamientoTable extends Migration
     {
         Schema::create('Tratamiento', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('Usuarios_id');
-            $table->foreign('Profesionistas_id');
+            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Profesionistas_id')->references('id')->on('Profesionistas')->onDelete('cascade')->onUpdate('cascade');
             $table->date('Fecha_Expedicion');
             $table->enum('status',['Activo','Inactivo'])->default('Activo');
             $table->date('Fecha_Fin_Tratamiento');

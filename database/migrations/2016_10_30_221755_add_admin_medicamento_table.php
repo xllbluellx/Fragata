@@ -14,11 +14,13 @@ class AddAdminMedicamentoTable extends Migration
     public function up()
     {
         Schema::create('Administrar_Medicamento', function (Blueprint $table) {
-            $table->increments('Inventario_Medico_id');
+            $table->integer('Inventario_Medico_id')->unsigned();
+            $table->integer('Usuarios_id')->unsigned();
+            $table->foreign('Inventario_Medico_id')->references('id')->on('Inventario_Medico')->onDelete('cascade')->onUpdate('cascade');
             $table->date('Periodicidad');
             $table->float('Cantidad_Administracion');
             $table->date('Fecha_Fin');
-            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

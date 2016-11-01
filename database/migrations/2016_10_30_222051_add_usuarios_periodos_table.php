@@ -14,7 +14,8 @@ class AddUsuariosPeriodosTable extends Migration
     public function up()
     {
         Schema::create('Usuarios_Periodos', function (Blueprint $table) {
-            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');;
+            $table->integer('Usuarios_id')->unsigned();
+            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps('Fecha');
             $table->enum('Tipo',['Ingresó','Egresó']);
 

@@ -15,8 +15,9 @@ class AddDocumentoTable extends Migration
     {
         Schema::create('Documento', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('Usuarios_id')->unsigned();
             $table->enum('Tipo_de_documento',['Legal','Administrativo','Medico','Psicologo','Consejeria']);
-            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');
             $table->string('Ruta_archivo');
             $table->date('Periodicidad');
             $table->date('Vigencia');

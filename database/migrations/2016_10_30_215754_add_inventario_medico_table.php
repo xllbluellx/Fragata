@@ -15,6 +15,7 @@ class AddInventarioMedicotable extends Migration
     {
         Schema::create('Inventario_Medico', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('Presentacion_Producto_id')->unsigned();
             $table->string('Nombre');
             $table->string('Codigo');
             $table->string('Laboratorio');

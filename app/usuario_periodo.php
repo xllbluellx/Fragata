@@ -17,6 +17,6 @@ public function Usuarios(){
 
 public function Profesionistas()
 {
-	return $this->belongsTo('App\profesionista')
+	return $this->belongsTo('App\profesionista');
 }
 }

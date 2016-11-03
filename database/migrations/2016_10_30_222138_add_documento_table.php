@@ -21,6 +21,7 @@ class AddDocumentoTable extends Migration
             $table->string('Ruta_archivo');
             $table->date('Periodicidad');
             $table->date('Vigencia');
+            $table->timestamps();
 
         });
     }

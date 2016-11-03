@@ -13,6 +13,6 @@ class usuario_sistema extends Model
 
 public function Profesionistas()
 {
-	return $this->belongsTo('App\profesionista')
+	return $this->belongsTo('App\profesionista');
 }
 }

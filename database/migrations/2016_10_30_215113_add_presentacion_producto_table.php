@@ -16,7 +16,8 @@ class AddPresentacionProductoTable extends Migration
         Schema::create('Presentacion_Producto', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('Presentacion',['Comprimidos','Liquidos','Aerosoles']);
-            $table->string('Concentracion');        
+            $table->string('Concentracion');   
+            $table->timestamps();     
         });
     }
 

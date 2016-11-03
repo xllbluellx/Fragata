@@ -17,6 +17,7 @@ class AddUsuariosSistemasTable extends Migration
             $table->integer('Profesionistas_id')->unsigned();
             $table->foreign('Profesionistas_id')->references('id')->on('Profesionistas')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('Tipo_Usuario',['Administrador','Medicamento','Psicologo','Tutor']);
+            $table->timestamps();
         });
     }
 

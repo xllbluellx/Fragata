@@ -21,6 +21,7 @@ class AddAdminMedicamentoTable extends Migration
             $table->float('Cantidad_Administracion');
             $table->date('Fecha_Fin');
             $table->foreign('Usuarios_id')->references('id')->on('Usuarios')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

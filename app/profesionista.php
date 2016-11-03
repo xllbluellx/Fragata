@@ -8,7 +8,7 @@ class profesionista extends Model
 {
     protected $table = "Profesionistas";
 
-    protected $fillable = ['Nombre','Direccion','Telefono','Correo_Electronico','Contraseña',
+    protected $fillable = ['Nombre','Direccion','Telefono','Correo_Electronico','Password',
     'Fecha_Nacimiento','RFC','IFE','Cedula','status',];
 
         /**
@@ -17,6 +17,16 @@ class profesionista extends Model
      * @var array
      */
     protected $hidden = [
-        'Contraseña', 'remember_token',
+        'Password', 'remember_token',
     ];
+
+public function Usuarios_Periodos()
+{
+    return $this->hasMany('App\usuario_periodo');
+}
+public function Usuarios_Sistema()
+{
+
+	return $this->hasOne('App\usuario_sistema');
+}
 }

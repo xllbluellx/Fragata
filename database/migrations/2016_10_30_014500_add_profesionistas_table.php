@@ -19,7 +19,7 @@ class AddProfesionistasTable extends Migration
             $table->string('Direccion');
             $table->string('Telefono');
             $table->string('Correo_Electronico')->unique();
-            $table->string('Contraseña');
+            $table->string('Password');
             $table->date('Fecha_Nacimiento');
             $table->string('RFC');
             $table->string('IFE');

@@ -52,7 +52,7 @@ Route::group(['prefix'=>'Medico'],function(){
 
 
 	Route::get('/', function () {
-	return view('Medico.Inicio_Medico');
+	return view('Medico.Inicio_Medicos');
 });
 
 /*Route::get('Inventario', function () {
@@ -71,7 +71,7 @@ Route::get('Documentos_Generales', function () {
 
 //Rutas para Psicologos ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-Route::group(['prefix'=>'Psicologos'],function(){
+Route::group(['prefix'=>'Psicologo'],function(){
 
 
 	Route::get('/', function () {
@@ -102,19 +102,19 @@ Route::get('Documentos_Generales', function () {
 
 //Rutas para Tutores ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-Route::group(['prefix'=>'Tutores'],function(){
+Route::group(['prefix'=>'Tutor'],function(){
 
 
 	Route::get('/', function () {
-	return view('Tutores.Inicio_Tutores');
+	return view('Tutor.Inicio_Tutores');
 });
 
 Route::get('InFormacion_Personal', function () {
-	return view('Tutores.tInformacion_Personal');
+	return view('Tutor.tInformacion_Personal');
 });
 
 Route::get('Documentos_Generales', function () {
-	return view('Tutores.yDocumentos');
+	return view('Tutor.tDocumentos');
 });
 
 });

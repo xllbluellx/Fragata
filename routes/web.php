@@ -27,6 +27,8 @@ Route::get('Personal', function () {
 	return view('Administrador.aPersonal');
 });
 
+Route::resource('Personal+','PersonalController');
+
 Route::get('Pacientes', function () {
 	return view('Administrador.aPacientes');
 });

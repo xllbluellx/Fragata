@@ -23,11 +23,11 @@ Route::group(['prefix'=>'Administrador'],function(){
 	return view('Administrador.Inicio_Administrador');
 });
 
-Route::get('Personal', function () {
+/*Route::get('Personal', function () {
 	return view('Administrador.aPersonal');
-});
+});*/
 
-Route::resource('Personal+','PersonalController');
+Route::resource('Personal','PersonalController');
 
 Route::get('Pacientes', function () {
 	return view('Administrador.aPacientes');

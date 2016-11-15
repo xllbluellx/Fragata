@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\profesionista;
 
 class PersonalController extends Controller
 {
@@ -16,7 +17,8 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        //
+        $profesionistas = profesionista::orderBy('id','ASC')->paginate(10);
+        return view ('Administrador.index')->with('profesionistas',$profesionistas);
     }
 
     /**
@@ -26,7 +28,7 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        return view('Administrador.aPersonal+');
+        return view('Administrador.aPersonal');
     }
 
     /**
@@ -37,7 +39,11 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $profesionista = new profesionista($request->all());
+        $profesionista ->Password = bcrypt($request->Password);
+        $profesionista ->save();
+        dd('Usuario creado satisfactoriamente');
     }
 
     /**

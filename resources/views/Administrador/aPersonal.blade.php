@@ -1,4 +1,101 @@
-<html>
+
+@extends('Inicios y mas')
+
+@section('title','Crear profesionista')
+
+@section('content')
+
+
+
+    {!! Form::open(['route' => 'Personal.store' , 'method' => 'POST'])!!}
+        <div class="form-group">
+            {!! Form::label('Nombre','Nombre')!!}
+            {!! Form::text ('Nombre',null,['class' => 'form-control', 'placeholder' => 'Nombre completo','required'])!!}
+        </div>
+
+                <div class="form-group">
+            {!! Form::label('Direccion','Dirección')!!}
+            {!! Form::text ('Direccion',null,['class' => 'form-control', 'placeholder' => 'Calle, Numero y Colonia','required'])!!}
+        </div>
+
+                <div class="form-group">
+            {!! Form::label('Telefono','Telefono')!!}
+            {!! Form::text ('Telefono',null,['class' => 'form-control','required'])!!}
+        </div>
+
+                <div class="form-group">
+            {!! Form::label('Correo_Electronico','Correo Electrónico')!!}
+            {!! Form::email ('Correo_Electronico',null,['class' => 'form-control','required'])!!}
+        </div>
+
+                <div class="form-group">
+            {!! Form::label('Password','Contraseña')!!}
+            {!! Form::text ('Password',null,['class' => 'form-control','required'])!!}
+        </div>
+
+                <div class="form-group">
+            {!! Form::label('Fecha_Nacimiento','Fecha de nacimiento')!!}
+            {!! Form::date ('Fecha_Nacimiento',null,['class' => 'form-control','required'])!!}
+        </div>
+
+                <div class="form-group">
+            {!! Form::label('RFC','RFC')!!}
+            {!! Form::text ('RFC',null,['class' => 'form-control','required'])!!}
+        </div> 
+
+                <div class="form-group">
+            {!! Form::label('IFE','IFE')!!}
+            {!! Form::text ('IFE',null,['class' => 'form-control','required'])!!}
+        </div>     
+
+                <div class="form-group">
+            {!! Form::label('Cedula','Cédula Profesional')!!}
+            {!! Form::text ('Cedula',null,['class' => 'form-control','required'])!!}
+        </div>         
+
+                <div class="form-group">
+            {!! Form::submit ('Registrar',null,['class' => 'btn btn-primary'])!!}
+        </div>                                                             
+
+                <div class="form-group">
+            {!! Form::submit ('Limpiar',null,['class' => 'btn btn-primary'])!!}
+        </div>                  
+    {!! Form::close()!!}
+
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <title>@yield ('title', 'Default') | Menu de administrador</title>
   <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.css')}}">
@@ -8,42 +105,47 @@
   </div>
   <div class="form-control-frg-pacientes">
                     <form id="pform" action="#" method="post">
+                
                 <fieldset id="datos">
-                    <legend>Datos Personales</legend>
-                    <label for="nombre">Introduce tu nombre:</label>
-                    <input type="text" name="nombre" value="Tu nombre"/><br/>
-                    <label for="contra">Contraseña:</label>
-                    <input type="password" name="contra"/><br/>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" /><br/>
+
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion"/><br/>
+
+                    <label for="tel">Teléfono:</label>
+                    <input type="text" name="tel"/><br/>
+
+                    <label for="email">Correo Electronico:</label>
+                    <input type="text" name="email" /><br/>
+
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password"/><br/>
+
+                    <label for="fnac">Fecha de Nacimiento:</label>
+                    <input type="date" name="fnac"/><br/>
+
+                    <label for="rfc">RFC:</label>
+                    <input type="text" name="rfc"/><br/>
+
+                    <label for="ife">IFE:</label>
+                    <input type="text" name="ife"/><br/>
+
+                    <label for="cedula">Cédula</label>
+                    <input type="text" name="cedula"/><br/>
+
+                    <label for="status">Status</label>
+                    <input type="enum" name="status" /><br/>          
+
                     </fieldset>
                     <br/>
                     
-                    <label for="estado_civil">Estado Civil</label>
-                    Casado:
-                    <input type="radio" name="estado_civil" value="1"/>
-                    Soltero:
-                    <input type="radio" name="estado_civil" value="0"/>
-                    <br/>
-                    <label for="beca">Tienes beca?</label>
-                    <input type="checkbox" name="beca" value="1"/>
-                    <br/>
-                    <label for="cv">Curriculum:</label>
-                    <input type="file" name="cv"/>
-                    <br/>
-                    <label for="comentario">Comentarios:</label>
-                    <textarea name="comentario" cols="80" rows="10">Texto</textarea>
-                    <br/>
-                    <label for="carrera">Carrera:</label>
-                    <select name="carrera">
-                        <option value="1">ISC</option>
-                        <option value="2">ITICS</option>
-                        <option value="3">INF</option>
-                    </select>
-                    <br/>
-                    <input type="submit" value="Enviar"/>
-                    <input type="reset" value="Borrar"/>
-                    <input type="button" value="Presiona" onclick="javascript:alert('hola');"/>
-                    <!--<input type="image" src="original.png" alt="Registrar" value="Archivo"/>-->
+
+                    <input type="submit" value="Guardar"/>
+                    <input type="reset" value="Borrar formulario"/>
+                    <input type="button" value="Cancelar" onclick="javascript:alert('En construccion u.u');"/>
+                    <input type="image" src="original.png" alt="Registrar" value="Archivo"/>
                 </form>
   </div>
 </body>
-</html>
+</html>-->

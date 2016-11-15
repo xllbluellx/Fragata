@@ -9,7 +9,7 @@ class profesionista extends Model
     protected $table = "Profesionistas";
 
     protected $fillable = ['Nombre','Direccion','Telefono','Correo_Electronico','Password',
-    'Fecha_Nacimiento','RFC','IFE','Cedula','status',];
+    'Fecha_Nacimiento','RFC','IFE','Cedula','status'];
 
         /**
      * The attributes that should be hidden for arrays.

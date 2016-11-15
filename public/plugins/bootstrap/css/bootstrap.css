@@ -2562,7 +2562,7 @@ output {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
-  background-color: #faf;
+  background-color: #white;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -2580,7 +2580,7 @@ output {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
-  background-color: #fff;
+  background-color: white;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;

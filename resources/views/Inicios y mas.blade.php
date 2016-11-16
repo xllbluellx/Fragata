@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>@yield ('title') | Menu de administrador</title>
+  <title>@yield ('title')</title>
   <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.css')}}">
         <div class="container-frg">
         <h1 class="frg-font">Fragata</h1>

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\profesionista;
+use App\inventario_med;
 
-class PersonalController extends Controller
+class InventarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class PersonalController extends Controller
     public function index()
     {
 
-        $profesionistas = profesionista::orderBy('id','ASC')->paginate(20);
-        return view ('Administrador.indexProfesionistas')->with('profesionistas',$profesionistas);
+        $medicamentos = inventario_med::orderBy('Nombre','ASC')->paginate(20);
+        return view ('Administrador.indexInventario')->with('medicamentos',$medicamentos);
         
 
     }
@@ -31,7 +31,7 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        return view('Administrador.aPersonal');
+        return view('Administrador.aInventario');
     }
 
     /**
@@ -42,10 +42,9 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        $profesionista = new profesionista($request->all());
-        $profesionista ->Password = bcrypt($request->Password);
-        $profesionista ->save();
-        dd('Usuario creado satisfactoriamente');
+        $medicamento = new inventario_med($request->all());
+        $medicamento ->save();
+        dd('Medicamento creado satisfactoriamente');
     }
 
     /**

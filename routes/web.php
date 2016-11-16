@@ -11,11 +11,12 @@
 |
 */
 
-//Rutas para Administrador ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
 Route::get('/', function () {
     return view(' Login :V');
 });
 
+//Rutas para Administrador ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 Route::group(['prefix'=>'Administrador'],function(){
 
 
@@ -23,27 +24,15 @@ Route::group(['prefix'=>'Administrador'],function(){
 	return view('Administrador.Inicio_Administrador');
 });
 
-/*Route::get('Personal', function () {
-	return view('Administrador.aPersonal');
-});*/
-
 Route::resource('Personal','PersonalController');
 
-Route::get('Pacientes', function () {
-	return view('Administrador.aPacientes');
-});
+Route::resource('Pacientes','PacientesController');
 
-Route::get('Inventario', function () {
-	return view('Administrador.aInventario');
-});
+Route::resource('Inventario','InventarioController');
 
-Route::get('InFormacion_Personal', function () {
-	return view('Administrador.aInformacion_Personal');
-});
+Route::resource('InFormacion_Personal','Informacion_PersonalController');
 
-Route::get('Documentos_Generales', function () {
-	return view('Administrador.aDocumentos_Generales');
-});
+Route::resource('Documentos_Generales','Documentos_GeneralesController');
 
 });
 

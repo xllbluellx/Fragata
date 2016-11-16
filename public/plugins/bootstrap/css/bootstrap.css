@@ -4349,6 +4349,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-nav {
   margin: 7.5px -15px;
 }
+.navbar-nav-word {
+  background-color: gray;
+  text-align: center;
+  font-size: 35px;
+}
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;

@@ -15,14 +15,16 @@ class AddInventarioMedicotable extends Migration
     {
         Schema::create('Inventario_Medico', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Presentacion_Producto_id')->unsigned();
+           // $table->integer('Presentacion_Producto_id')->unsigned();
             $table->string('Nombre');
             $table->string('Codigo');
             $table->string('Laboratorio');
-            $table->foreign('Presentacion_Producto_id')->references('id')->on('Presentacion_Producto')->onDelete('cascade')->onUpdate('cascade');
+           // $table->foreign('Presentacion_Producto_id')->references('id')->on('Presentacion_Producto')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('Controlado',['Si','No']);
-            $table->date('Fecha_Ingreso_Medicamento');
+            $table->enum('Presentacion',['Comprimidos','Liquidos','Aerosoles']);             
+            $table->string('Concentracion');   
             $table->float('Cantidad');
+            $table->date('Fecha_Ingreso_Medicamento');
             $table->timestamps();
         });
     }

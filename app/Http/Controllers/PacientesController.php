@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\profesionista;
+use App\User;
 
-class PersonalController extends Controller
+class PacientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class PersonalController extends Controller
     public function index()
     {
 
-        $profesionistas = profesionista::orderBy('id','ASC')->paginate(20);
-        return view ('Administrador.indexProfesionistas')->with('profesionistas',$profesionistas);
+        $pacientes = User::orderBy('Nombre','ASC')->paginate(20);
+        return view ('Administrador.indexPacientes')->with('pacientes',$pacientes);
         
 
     }
@@ -31,7 +31,7 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        return view('Administrador.aPersonal');
+        return view('Administrador.aPacientes');
     }
 
     /**
@@ -42,9 +42,8 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        $profesionista = new profesionista($request->all());
-        $profesionista ->Password = bcrypt($request->Password);
-        $profesionista ->save();
+        $paciente = new User($request->all());
+        $paciente ->save();
         dd('Usuario creado satisfactoriamente');
     }
 

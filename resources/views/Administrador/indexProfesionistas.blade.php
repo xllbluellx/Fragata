@@ -1,8 +1,11 @@
 @extends('Inicios y mas')
 
-@section('title','Seccion Usuarios')
+@section('title','Seccion Personal')
 
 @section('content')
+	<head>
+		<div class="nav navbar-nav-word">Personal</div>
+	</head>
 	<table class="table table-striped">
 		<thead>
 			<th>Id</th>
@@ -30,6 +33,7 @@
 					<td>{{$profesionista->IFE}}</td>
 					<td>{{$profesionista->Cedula}}</td>
 					<td>{{$profesionista->status}}</td>
+					<td> <a href="" class="btn btn-danger">Editar</a></td>
 				</tr>
 			@endforeach
 		</tbody>

@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>@yield ('title', 'Default') | Menu de administrador</title>
+  <title>@yield ('title')Menu de administrador</title>
   <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.css')}}">
 </head> 
 <body>
@@ -29,3 +29,4 @@
 </nav>
 </body>
 </html>
+holoooooooo
